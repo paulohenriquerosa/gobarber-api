@@ -1,4 +1,5 @@
 import { injectable, inject } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import ICacheProvider from '@shared/container/provider/CacheProvider/models/ICacheProvider';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
@@ -43,7 +44,7 @@ class ListProviderAppointmentsService {
 
       await this.cacheProvider.save(
         `provider-appointments:${provider_id}:${year}-${month}-${day}`,
-        appointments,
+        classToClass(appointments),
       );
     }
     return appointments;
