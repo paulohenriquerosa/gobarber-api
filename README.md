@@ -38,10 +38,6 @@
   <a href="#-license">License</a>
 </p>
 
-<p id="insomniaButton" align="center">
-  <a href="" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
-</p>
-
 ## 👨🏻‍💻 About the project
 
 This api provides everything needed to organize appointments between the barbers and customers.
@@ -76,8 +72,6 @@ Technologies that I used to develop this api
 
 ## 💻 Getting started
 
-Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button
-
 ### Requirements
 
 - [Node.js](https://nodejs.org/en/)
@@ -101,6 +95,12 @@ $ yarn
 # Create the instance of postgreSQL using docker
 $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker \
               -p 5432:5432 -d postgres
+
+# Create the instance of MongoDB using docker
+$ docker run --name mongodb -p 27017:27017 -d -t mongo
+
+# Create the instance of Redis using docker
+$ docker run --name redis -p 6379:6379 -d -t redis:alpine
 
 # Make sure the keys in 'ormconfig.json' to connect with your database
 # are set up correctly.
