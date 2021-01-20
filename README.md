@@ -1,70 +1,152 @@
-# Recuperação de senha
+<h1 align="center">
+	<img alt="GoStack" src="https://github.com/paulohenriquerosa/GoBarber/blob/main/img/logo.png" width="200px" />
 
-**RF**
+</h1>
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve poder receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+<h3 align="center">
+  Backend for GoBarber project
+</h3>
 
-**RNF**
+<p align="center">The best way to schedule your service!</p>
 
-- Utilizar MailTrap para testar envios em ambiente de desenvolvimento;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job)
+<p align="center">
 
-**RN**
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/paulohenriquerosa/gobarber-api?color=%23FF9000">
 
-- O link enviado por e-mail para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar sua senha;
+  <a href="https://www.linkedin.com/in/paulo-henrique-rosa/">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-Paulo%20Henrique-gree">
+  </a>
 
-# Aualização do perfil
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/paulohenriquerosa/gobarber-api?color=%23FF9000">
 
-**RF**
+  <a href="https://github.com/paulohenriquerosa/gobarber-api/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/paulohenriquerosa/gobarber-api?color=%23FF9000">
+  </a>
 
-- O usuário deve poder atualizar seu nome, email e senha;
+  <a href="https://github.com/paulohenriquerosa/gobarber-api/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/paulohenriquerosa/gobarber-api?color=%23FF9000">
+  </a>
 
-**RN**
+  <img alt="GitHub" src="https://img.shields.io/github/license/paulohenriquerosa/gobarber-api?color=%23FF9000">
+</p>
 
-- O usuário não pode alterar seu e-mail para um e-mail já utilizado;
-- Para atualizar sua senha, o usuário deve confirmar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+<p align="center">
+  <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-# Painel do prestador
+<p id="insomniaButton" align="center">
+  <a href="" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</p>
 
-**RF**
+## 👨🏻‍💻 About the project
 
-- O usuário deve poder listar seu agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lida;
+This api provides everything needed to organize appointments between the barbers and customers.
 
-**RNF**
+Customers can choose the best time available to them.
 
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenada no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
+Providers can see all their appointments, manage the times, also see if one client canceled the schedule.
 
-**RN**
+To see the **web client**, click here: [GoBarber Web](https://github.com/paulohenriquerosa/gobarber-web)</br>
+To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/paulohenriquerosa/gobarber-mobile)
 
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
+## 🚀 Technologies
 
-# Agendamento de serviços
+Technologies that I used to develop this api
 
-**RF**
+- [Node.js](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Multer](https://github.com/expressjs/multer)
+- [TypeORM](https://typeorm.io/#/)
+- [JWT-token](https://jwt.io/)
+- [uuid v4](https://github.com/thenativeweb/uuidv4/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Date-fns](https://date-fns.org/)
+- [Jest](https://jestjs.io/)
+- [SuperTest](https://github.com/visionmedia/supertest)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
+- [Commitizen](https://github.com/commitizen/cz-cli)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://editorconfig.org/)
 
-- O usuário deve poder listar todos prestadores de serviços cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar os horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
+## 💻 Getting started
 
-**RNF**
+Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button
 
-- A listagem de prestadores deve ser armazenado em cache;
+### Requirements
 
-**RN**
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
+- One instance of [PostgreSQL](https://www.postgresql.org/)
 
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17h)
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
+> Obs.: I recommend use docker
 
+**Clone the project and access the folder**
+
+```bash
+$ git clone https://github.com/paulohenriquerosa/gobarber-api.git && cd gobarber-api
+```
+
+**Follow the steps below**
+
+```bash
+# Install the dependencies
+$ yarn
+
+# Create the instance of postgreSQL using docker
+$ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker \
+              -p 5432:5432 -d postgres
+
+# Make sure the keys in 'ormconfig.json' to connect with your database
+# are set up correctly.
+
+# Once the services are running, run the migrations
+$ yarn typeorm migration:run
+
+# To finish, run the api service
+$ yarn dev:server
+
+# Well done, project is started!
+```
+
+## 🤔 How to contribute
+
+**Make a fork of this repository**
+
+```bash
+# Fork using GitHub official command line
+# If you don't have the GitHub CLI, use the web site to do that.
+
+$ gh repo fork paulohenriquerosa/gobarber-api
+```
+
+**Follow the steps below**
+
+```bash
+# Clone your fork
+$ git clone your-fork-url && cd gobarber-api
+
+# Create a branch with your feature
+$ git checkout -b my-feature
+
+# Make the commit with your changes
+$ git commit -m 'feat: My new feature'
+
+# Send the code to your remote branch
+$ git push origin my-feature
+```
+
+After your pull request is merged, you can delete your branch
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with 💜 &nbsp;by Paulo Henrique 👋 &nbsp;[See my linkedin](https://www.linkedin.com/in/paulo-henrique-rosa/)
