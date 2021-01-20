@@ -92,18 +92,21 @@ $ git clone https://github.com/paulohenriquerosa/gobarber-api.git && cd gobarber
 # Install the dependencies
 $ yarn
 
+# Make a copy of '.env.example' to '.env'
+# and set with YOUR environment variables.
+# The aws variables do not need to be filled for dev environment
+$ cp .env.example .env
+
 # Create the instance of postgreSQL using docker
-$ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker \
+$ docker run --name gobarber-postgres -e POSTGRES_USER=docker \
+              -e POSTGRES_DB=gobarber -e POSTGRES_PASSWORD=docker \
               -p 5432:5432 -d postgres
 
-# Create the instance of MongoDB using docker
-$ docker run --name mongodb -p 27017:27017 -d -t mongo
+# Create the instance of mongoDB using docker
+$ docker run --name gobarber-mongodb -p 27017:27017 -d -t mongo
 
-# Create the instance of Redis using docker
-$ docker run --name redis -p 6379:6379 -d -t redis:alpine
-
-# Make sure the keys in 'ormconfig.json' to connect with your database
-# are set up correctly.
+# Create the instance of redis using docker
+$ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
 
 # Once the services are running, run the migrations
 $ yarn typeorm migration:run
